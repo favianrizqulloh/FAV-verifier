@@ -1,0 +1,18 @@
+{
+  "name": "fav-verifier",
+  "version": "1.0.0",
+  "description": "A simple Discord bot script used in the FΛV Community Discord Server | Made with discord.js",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "keywords": [
+    "discordjs, bot, discord, discordbot, verifier, fav-verifier"
+  ],
+  "author": "Fav#8324",
+  "license": "ISC",
+  "dependencies": {
+    "discord.js": "^11.5.1",
+    "express": "^4.17.1"
+  }
+}
