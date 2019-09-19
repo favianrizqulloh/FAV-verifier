@@ -13,6 +13,7 @@ client.on('message', message => {
     
     if(message.member.roles.has(messageRole.id)) return;
     message.member.addRole(messageRole)
+    message.delete(0)
 }
 	console.log(message.content);
 });
