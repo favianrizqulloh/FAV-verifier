@@ -12,8 +12,8 @@ client.on('message', message => {
     const messageRoleExists = message.guild.roles.exists(role => role.name === "Member")
     
     if(message.member.roles.has(messageRole.id)) return;
+    message.react('✅')
     message.member.addRole(messageRole)
-    message.delete(0)
 }
 	console.log(message.content);
 });
