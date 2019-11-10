@@ -28,6 +28,7 @@ client.on('message', message => {
     if(message.member.roles.has(messageRole.id)) return;
     message.react('✅')
     message.member.addRole(messageRole)
+	  .then(()=>message.delete(5000))
 	  .catch(error => {
 	    console.error(error.stack)
     message.channel.send(error.stack)
