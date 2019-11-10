@@ -8,8 +8,8 @@ client.once('ready', () => {
 
 client.on('message', message => {
   if (message.content === 'agree' && message.channel.id === "574103717897568279") {
-	  if (!message.guild.me.hasPermission("SEND_MESSAGES")) return console.error("The bot doesn't have the permission to send messages")
-	  if (!message.guild.me.hasPermission("ADD_REACTIONS")) return console.error("The bot doesn't have the permission to add reactions")
+	  if (!message.channel.permissionFor(message.guild.me).serialize().SEND_MESSAGES) return console.error("The bot doesn't have the permission to send messages")
+	  if (!message.channel.permissionFor(message.guild.me).serialize().ADD_REACTIONS) return console.error("The bot doesn't have the permission to add reactions")
     const messageRole = message.guild.roles.find(role => role.name === "Member")
     if (messageRole == null) return
     if (!message.guild.me.hasPermission("MANAGE_ROLES")) {
