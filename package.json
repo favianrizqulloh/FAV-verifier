@@ -7,11 +7,16 @@
     "start": "node index.js"
   },
   "keywords": [
-    "discordjs, bot, discord, discordbot, verifier, fav-verifier"
+    "discordjs", "bot", "discord", "discordbot", "verifier", "fav-verifier"
   ],
   "author": "Fav#8324",
+  "contributors":["Nick Chan#0001”],
   "license": "ISC",
   "dependencies": {
     "discord.js": "^11.5.1"
+  },
+  "bugs":"https://github.com/favianrizqulloh/FAV-verifier/issues",
+  "engines":{
+ "node":">= 6.0.0"
   }
 }
