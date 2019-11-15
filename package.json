@@ -10,7 +10,7 @@
     "discordjs", "bot", "discord", "discordbot", "verifier", "fav-verifier"
   ],
   "author": "Fav#8324",
-  "contributors":["Nick Chan#0001”],
+  "contributors": "Nick Chan#0001”,
   "license": "ISC",
   "dependencies": {
     "discord.js": "^11.5.1"
