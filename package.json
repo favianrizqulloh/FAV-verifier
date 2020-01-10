@@ -13,7 +13,8 @@
   "contributors": "Nick Chan#0001”,
   "license": "ISC",
   "dependencies": {
-    "discord.js": "^11.5.1"
+    "discord.js": "^11.5.1",
+    "dotenv":"^8.2.0"
   },
   "bugs":"https://github.com/favianrizqulloh/FAV-verifier/issues",
   "engines":{
