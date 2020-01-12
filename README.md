@@ -5,10 +5,7 @@
 
 # FAV Verifier
 </div>
-
 A simple verification script used in the FΛV Community Discord Server | Made with discord.js
-
----
 
 1. Run `npm install`  
 1. Run `node index.js`  
