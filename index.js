@@ -4,7 +4,6 @@ require("dotenv").config();
 const Discord = require("discord.js");
 const chalk = require("chalk");
 const moment = require("moment");
-const http = require("http");
 const { BOT_TOKEN, VERIFICATION_CHANNEL, VERIFIED_ROLE } = process.env;
 
 const client = new Discord.Client({
