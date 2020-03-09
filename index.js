@@ -7,7 +7,6 @@ const moment = require("moment");
 const { BOT_TOKEN, VERIFICATION_CHANNEL, VERIFIED_ROLE } = process.env;
 
 const client = new Discord.Client({
-  disabledEvents: ["TYPING_START", "TYPING_STOP"],
   disableEveryone: true
 });
 
@@ -32,14 +31,14 @@ client.on("message", message => {
         .then(m => m.delete(20000));
       return;
     }
-    const messageRole = message.guild.roles.find(role => role.name === VERIFIED_ROLE);
+    const messageRole = message.guild.roles.cache.find(role => role.name === VERIFIED_ROLE);
     if (messageRole == null) return;
     if (!message.guild.me.hasPermission("MANAGE_ROLES")) {
       message.channel.send("The bot doesn't have the permission required to assign roles.\nRequired permission: `MANAGE_ROLES`")
         .then(m => m.delete(20000));
       return;
     }
-    if (message.guild.me.highestRole.comparePositionTo(messageRole) < 1) {
+    if (message.guild.me.roles.highest.comparePositionTo(messageRole) < 1) {
       message.channel.send("The position of this role is higher than the bot's highest role, it cannot be assigned by the bot.")
         .then(m => m.delete(20000));
       return;
@@ -49,9 +48,9 @@ client.on("message", message => {
         .then(m => m.delete(20000));
       return;
     }
-    if (message.member.roles.has(messageRole.id)) return;
+    if (message.member.roles.cache.has(messageRole.id)) return;
     message.react("✅");
-    message.member.addRole(messageRole)
+    message.member.roles.add(messageRole)
       .then(() => message.delete(5000))
       .catch(error => {
       console.error(error.stack);

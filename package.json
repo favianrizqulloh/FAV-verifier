@@ -1,16 +1,18 @@
 {
   "name": "fav-verifier",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "A simple verification script used in the FΛV Community Discord Server | Made with discord.js",
   "author": "Favian Rizqulloh",
-  "contributors": ["Nick Chan#0001"],
+  "contributors": [
+    "Nick Chan#0001"
+  ],
   "main": "index.js",
   "scripts": {
     "start": "node index.js"
   },
   "dependencies": {
     "dotenv": "^8.2.0",
-    "discord.js": "^11.5.1",
+    "discord.js": "^12.0.1",
     "chalk": "^3.0.0",
     "moment": "^2.24.0"
   },
