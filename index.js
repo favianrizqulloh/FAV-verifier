@@ -23,40 +23,40 @@ client.on("message", message => {
     if (!message.channel.permissionsFor(message.guild.me).serialize().ADD_REACTIONS) {
       console.error("The bot doesn't have the permission to add reactions.\nRequired permission: `ADD_REACTIONS`");
       message.channel.send("The bot doesn't have the permission to add reactions.\nRequired permission: `ADD_REACTIONS`")
-        .then(m => m.delete(20000));
+        .then(m => m.delete({timeount: 20000}));
       return;
     }
     if (!message.channel.permissionsFor(message.guild.me).serialize().MANAGE_MESSAGES) {
       console.error("The bot doesn't have the permission to delete messages.\nRequired permission: `MANAGE_MESSAGES`");
       message.channel.send("The bot doesn't have the permission to delete messages.\nRequired permission: `MANAGE_MESSAGES`")
-        .then(m => m.delete(20000));
+        .then(m => m.delete({timeount: 20000}));
       return;
     }
     const messageRole = message.guild.roles.cache.find(role => role.name === VERIFIED_ROLE);
     if (messageRole == null) return;
     if (!message.guild.me.hasPermission("MANAGE_ROLES")) {
       message.channel.send("The bot doesn't have the permission required to assign roles.\nRequired permission: `MANAGE_ROLES`")
-        .then(m => m.delete(20000));
+        .then(m => m.delete({timeount: 20000}));
       return;
     }
     if (message.guild.me.roles.highest.comparePositionTo(messageRole) < 1) {
       message.channel.send("The position of this role is higher than the bot's highest role, it cannot be assigned by the bot.")
-        .then(m => m.delete(20000));
+        .then(m => m.delete({timeount: 20000}));
       return;
     }
     if (messageRole.managed == true) {
       message.channel.send("This is an auto managed role, it cannot be assigned.")
-        .then(m => m.delete(20000));
+        .then(m => m.delete({timeount: 20000}));
       return;
     }
     if (message.member.roles.cache.has(messageRole.id)) return;
     message.react("✅");
     message.member.roles.add(messageRole)
-      .then(() => message.delete(5000))
+      .then(() => message.delete({ timeout:5000 }))
       .catch(error => {
       console.error(error.stack);
       message.channel.send(error.stack)
-        .then(m => m.delete(20000));
+        .then(m => m.delete({timeount: 20000}));
     });
   }
 });
