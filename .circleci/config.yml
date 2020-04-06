@@ -5,7 +5,7 @@ jobs:
       - image: circleci/node:12.16.1
     steps:
       - checkout
-      - run: npm install && npm start
+      - run: npm install && npm test
 workflows:
   version: 2
   test:
