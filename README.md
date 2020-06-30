@@ -1,12 +1,12 @@
 <div align="center">
     <img src="https://i.imgur.com/gZzDydY.gif"><br><br>
-
+    
+    [![repl.it][https://repl.it/badge/github/favianrizqulloh/FAV-verifier]][https://repl.it/github/favianrizqulloh/FAV-verifier]
+    
 ---
 
 # FAV Verifier
 </div>
-[![Run on Repl.it](https://repl.it/badge/github/favianrizqulloh/FAV-verifier)](https://repl.it/github/favianrizqulloh/FAV-verifier)
-
 A simple verification script used in the FΛV Community Discord Server | Made with discord.js
 
 1. Run `npm install`  
