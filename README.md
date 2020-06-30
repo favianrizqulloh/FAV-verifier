@@ -1,8 +1,6 @@
 <div align="center">
     <img src="https://i.imgur.com/gZzDydY.gif"><br><br>
     
-    [![repl.it][https://repl.it/badge/github/favianrizqulloh/FAV-verifier]][https://repl.it/github/favianrizqulloh/FAV-verifier]
-    
 ---
 
 # FAV Verifier
