@@ -19,13 +19,10 @@ client.once("ready", () => {
   console.log(chalk.greenBright("[READY]"), `Logged in as ${client.user.tag} (${client.user.id}) at ${moment().format("DD MMMM YYYY, hh:mm:ss")}`);
 });
 
-if (DEBUG) client.on('debug', console.log)
 client.on("messageCreate", message => {
-  if (DEBUG) console.log(`[Stage 0] ${message.author.tag} (${message.author.id}) in ${message.channel.name} (${message.channel.id}) of ${message.guild.name} (${message.guild.id}):\n\n${message.content}`)
   if (!message.guild) return;
   if (message.author.bot) return;
   if (message.content === VERIFICATION_MESSAGE && message.channel.id === VERIFICATION_CHANNEL) {
-  if (DEBUG) console.log(`[Stage 1] Verification attempt by ${message.author.tag} (${message.author.id})`)
     if (!message.channel.permissionsFor(message.guild.me).serialize().SEND_MESSAGES) return console.error("The bot doesn't have the permission to send messages.\nRequired permission: SEND_MESSAGES");
     if (!message.channel.permissionsFor(message.guild.me).serialize().ADD_REACTIONS) {
       console.error("The bot doesn't have the permission to add reactions.\nRequired permission: `ADD_REACTIONS`");
@@ -47,19 +44,16 @@ client.on("messageCreate", message => {
         .then(m => setTimeout(() => m.delete(), ERROR_MESSAGE_TIMEOUT));
       return;
     }
-    if (DEBUG) console.log(`[Stage 2.5] Can assign roles`)
     if (message.guild.me.roles.highest.comparePositionTo(messageRole) < 1) {
       message.channel.send("The position of this role is higher than the bot's highest role, it cannot be assigned by the bot.")
         .then(m => setTimeout(() => m.delete(), ERROR_MESSAGE_TIMEOUT));
       return;
     }
-    if (DEBUG) console.log(`[Stage 2.5] Role lower`)
     if (messageRole.managed == true) {
       message.channel.send("This is an auto managed role, it cannot be assigned.")
         .then(m => setTimeout(() => m.delete(), ERROR_MESSAGE_TIMEOUT));
       return;
     }
-    if (DEBUG) console.log(`[Stage 3] Permission pass`)
     if (message.member.roles.cache.has(messageRole.id)) return;
     message.react("✅");
     message.member.roles.add(messageRole)
