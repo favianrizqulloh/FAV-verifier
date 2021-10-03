@@ -17,4 +17,4 @@ A simple verification script used in the FΛV Community Discord Server | Made wi
 To start the verifier, execute command `node index.js`.
 
 # Join us on Discord
-[Click here to join our community on Discord!](https://discord.io/favcommunity)
+[Click here to get support on Discord!](https://discord.io/favcommunity)
