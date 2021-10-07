@@ -5,8 +5,8 @@ require("dotenv").config();
 const Discord = require("discord.js");
 const chalk = require("chalk");
 const moment = require("moment");
-const { BOT_TOKEN, VERIFICATION_CHANNEL, VERIFIED_ROLE, VERIFICATION_MESSAGE, DEBUG } = process.env;
-const ERROR_MESSAGE_TIEMOUT = parseInt(process.env.ERROR_MESSAGE_TIEMOUT);
+const { BOT_TOKEN, VERIFICATION_CHANNEL, VERIFIED_ROLE, VERIFICATION_MESSAGE } = process.env;
+const ERROR_MESSAGE_TIMEOUT = parseInt(process.env.ERROR_MESSAGE_TIEMOUT);
 const SUCCESS_MESSAGE_TIMEOUT = parseInt(process.env.SUCCESS_MESSAGE_TIMEOUT);
 
 const client = new Discord.Client({
@@ -38,7 +38,7 @@ client.on("messageCreate", message => {
     }
     const messageRole = message.guild.roles.cache.get(VERIFIED_ROLE) ||
 	message.guild.roles.cache.find(role => role.name === VERIFIED_ROLE);
-    if (messageRole == null) return console.error('Role ${VERIFIED_ROLE} not found');
+    if (messageRole == null) return console.error('Role ' + VERIFIED_ROLE + ' not found.');
     if (!message.guild.me.permissions.has("MANAGE_ROLES")) {
       message.channel.send("The bot doesn't have the permission required to assign roles.\nRequired permission: `MANAGE_ROLES`")
         .then(m => setTimeout(() => m.delete(), ERROR_MESSAGE_TIMEOUT));
