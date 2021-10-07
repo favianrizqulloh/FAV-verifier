@@ -6,7 +6,7 @@ const Discord = require("discord.js");
 const chalk = require("chalk");
 const moment = require("moment");
 const { BOT_TOKEN, VERIFICATION_CHANNEL, VERIFIED_ROLE, VERIFICATION_MESSAGE } = process.env;
-const ERROR_MESSAGE_TIMEOUT = parseInt(process.env.ERROR_MESSAGE_TIEMOUT);
+const ERROR_MESSAGE_TIMEOUT = parseInt(process.env.ERROR_MESSAGE_TIMEOUT);
 const SUCCESS_MESSAGE_TIMEOUT = parseInt(process.env.SUCCESS_MESSAGE_TIMEOUT);
 
 const client = new Discord.Client({
