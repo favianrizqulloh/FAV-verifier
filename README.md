@@ -14,7 +14,7 @@ A simple verification script used in the FΛV Community Discord Server | Made wi
 4. Execute command `npm i`
 5. Copy the .env.example file to .env and edit the .env file according to the instructions in the file.
 
-To start the verifier, execute command `npm start` or `node index.js`.
+To start the verifier, execute command `npm start` or `node index.js`. You can also open the `CLIENT.bat` file if you are on Windows 10/11.
 
 # Join us on Discord
 [Click here to get support on Discord!](https://discord.io/favcommunity)
