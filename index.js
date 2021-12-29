@@ -15,6 +15,11 @@ const client = new Discord.Client({
   allowedMentions: { parse : ['users'] },
 });
 
+setTimeout(() => {
+    const version = Number(process.version.split('.')[0].replace('v', ''));
+    if (version < 16) return console.log('\n\nPlease upgrade to Node v16 or higher\nPlease upgrade to Node v16 or higher\nPlease upgrade to Node v16 or higher\n\n');
+}, 8000);
+
 client.once("ready", () => {
   console.log(chalk.greenBright("[READY]"), `Logged in as ${client.user.tag} (${client.user.id}) at ${moment().format("DD MMMM YYYY, hh:mm:ss")}`);
 });
