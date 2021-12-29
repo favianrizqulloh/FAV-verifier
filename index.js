@@ -69,5 +69,5 @@ client.on("messageCreate", message => {
 client.login(BOT_TOKEN);
 
 process.on('unhandledRejection', (err) => { 
-    console.log(chalk.red(`\nFATAL ERROR: \n\n`, err.stack))
+    console.log(`\nFATAL ERROR: \n\n`, err.stack)
 });
